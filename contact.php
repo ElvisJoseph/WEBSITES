@@ -1,3 +1,5 @@
+$_SESSION['Email'] = $_POST['Email'];
+session_start();
 <?php
     $name = $_POST['name'];
     $email = $_POST['email'];
