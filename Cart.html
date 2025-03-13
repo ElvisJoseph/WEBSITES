@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papalucas Stores - Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: green;
+            padding: 15px 20px;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .cart {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .cart-items {
+            max-width: 800px;
+            margin: auto;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item button {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        button {
+            background: orange;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            header, nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Papalucas Stores Logo" class="logo">
+        </div>
+        <nav>
+            <div class="logo">Papalucas Stores</div>
+            <ul>
+                <li><a href="papalucas.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="cart">
+        <h2>Your Shopping Cart</h2>
+        <div class="cart-items" id="cart-items"></div>
+        <p><strong>Total:</strong> $<span id="cart-total">0.00</span></p>
+        <button onclick="clearCart()">Clear Cart</button>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Papalucas Stores. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartContainer = document.getElementById('cart-items');
+            let total = 0;
+            cartContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                return;
+            }
+            
+            cart.forEach((item, index) => {
+                let itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `<span>${item.name} - $${item.price} x ${item.quantity}</span> 
+                                        <button onclick="removeFromCart(${index})">Remove</button>`;
+                cartContainer.appendChild(itemElement);
+                total += item.price * item.quantity;
+            });
+            
+            document.getElementById('cart-total').innerText = total.toFixed(2);
+        }
+        
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+        
+        function clearCart() {
+            localStorage.removeItem('cart');
+            loadCart();
+        }
+        
+        window.onload = loadCart;
+    </script>
+</body>
+</html>

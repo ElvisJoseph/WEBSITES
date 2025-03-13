@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papalucas Stores</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: green;
+            padding: 15px 20px;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: orange;
+            color: white;
+        }
+        .btn {
+            background: green;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .featured {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .product {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .cart {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .cart-items {
+            max-width: 800px;
+            margin: auto;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            header, nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Papalucas Stores Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="papalucas.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Welcome to Papalucas Stores</h1>
+        <p>Discover the finest spices from around the world.</p>
+        <a href="products.html" class="btn">Shop Now</a>
+    </section>
+    
+    <section class="featured">
+        <h2>Featured Spices</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="images/turmeric.jpg" alt="Turmeric">
+                <h3>Turmeric Powder</h3>
+                <p>Ksh5.99</p>
+                <button onclick="addToCart('Turmeric Powder', 5.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/cinnamon.jpg" alt="Cinnamon">
+                <h3>Cinnamon Sticks</h3>
+                <p>Ksh4.99</p>
+                <button onclick="addToCart('Cinnamon Sticks', 4.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/paprika.jpg" alt="Paprika">
+                <h3>Smoked Paprika</h3>
+                <p>Ksh6.49</p>
+                <button onclick="addToCart('Smoked Paprika', 6.49)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cart">
+        <h2>Shopping Cart</h2>
+        <div class="cart-items" id="cart-items"></div>
+        <p>Total: Kshs<span id="cart-total">0.00</span></p>
+        <button onclick="clearCart()">Clear Cart</button>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Papalucas Stores. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        let cart = [];
+        
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+        }
+        
+        function updateCart() {
+            let cartItems = document.getElementById("cart-items");
+            let cartTotal = document.getElementById("cart-total");
+            cartItems.innerHTML = "";
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                cartItems.innerHTML += `<div class='cart-item'>
+                    <span>${item.name} - $${item.price.toFixed(2)}</span>
+                    <button onclick="removeFromCart(${index})">Remove</button>
+                </div>`;
+            });
+            cartTotal.textContent = total.toFixed(2);
+        }
+        
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+        
+        function clearCart() {
+            cart = [];
+            updateCart();
+        }
+    </script>
+</body>
+</html>
