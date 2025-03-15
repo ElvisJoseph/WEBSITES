@@ -68,9 +68,25 @@
             font-size: 18px;
             border-radius: 5px;
         }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .logo{
+            width: 50px;
+            height: auto;
+        }
         .featured {
             text-align: center;
             padding: 40px 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .featured.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .product-list {
             display: grid;
@@ -78,6 +94,13 @@
             gap: 20px;
             max-width: 1000px;
             margin: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .product-list.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .product {
             background: #f4f4f4;
@@ -120,7 +143,7 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="images/logo.png" alt="Papalucas Stores Logo" class="logo">
+            <img src="Papalucas/logo.svg" alt="Papalucas Stores Logo" class="logo">
         </div>
         <nav>
             <ul>
@@ -207,6 +230,25 @@
             cart = [];
             updateCart();
         }
+        document.addEventListener("DOMContentLoaded",function(){
+            const observerOptions = {
+                threshold: 0.1
+            }
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const featuredSection = document.querySelector('.featured');
+            const productList = document.querySelector('.product-list');
+
+            observer.observe(featuredSection);
+            observer.observe(productList);
+        });
     </script>
 </body>
 </html>
