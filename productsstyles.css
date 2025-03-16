@@ -53,6 +53,10 @@
             margin: auto;
             padding: 20px;
         }
+        product img{
+            max-width: 100%;
+            height: auto;
+        }
         .products.show{
             display: block;
             opacity: 1;
@@ -70,6 +74,11 @@
             width: 200px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-item img{
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
         }
         .product-item:hover {
             transform: scale(1.05);
