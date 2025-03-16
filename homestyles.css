@@ -65,8 +65,11 @@ nav ul li a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    width: 10%;
+    width: 50px;
+    height: auto;
 }
-.logo{
+.header-logo {
     width: 50px;
     height: auto;
 }
