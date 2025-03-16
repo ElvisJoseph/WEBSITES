@@ -108,6 +108,11 @@ nav ul li a {
     max-width: 100%;
     height: auto;
 }
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
 .cart {
     padding: 40px 20px;
     text-align: center;
