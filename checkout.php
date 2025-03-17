@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
+    
 </head>
 <body>
     <header>
@@ -30,10 +31,7 @@
             <th>Total Price</th>
             </tr>
             <tr>
-                foreach($_SESSION['cart'] as $item){
-                <td><?php echo $item['name']; ?></td>
-                <td><?php echo $item['name']; ?></td>
-                }
+               
             </tr>
 
     
