@@ -4,81 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Papalucas Stores - Products</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="productsstyles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: green;
-            padding: 15px 20px;
-            color: white;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        nav ul li {
-            display: inline;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .categories {
-            text-align: center;
-            padding: 20px;
-        }
-        .category-buttons button {
-            padding: 10px 15px;
-            margin: 5px;
-            background: orange;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .products {
-            display: none;
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .product-item {
-            background: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            width: 200px;
-            text-align: center;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #333;
-            color: white;
-            margin-top: 20px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="images/logo.png" alt="Papalucas Stores Logo" class="logo">
+            <img src="Papalucas/logo.svg" alt="Papalucas Stores Logo" class="logo">
         </div>
         <nav>
             <ul>
@@ -104,19 +38,19 @@
         <h2>Herbs</h2>
         <div class="product-list">
             <div class="product-item">Moringa powder
-                <img src="Moringa powder" class="Herbs">
+                <img src="Papalucas/moringa powder.jpg" class="Herbs">
                 <button onclick="addToCart('Moringa powder', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Neem Powder
-                <img src="Neem powder" class="Herbs">
+                <img src="Papalucas/neem powder.jpg" class="Herbs">
                 <button onclick="addToCart('Neem Powder', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Qasil
-                <img src="Qasil" class="Herbs">
+                <img src="Papalucas/qasil.jpg" class="Herbs">
                 <button onclick="addToCart('Qasil', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Sea moss
-                <img src="Sea moss" class="Herbs">
+                <img src="Papalucas/seamoss.jpg" class="Herbs">
                 <button onclick="addToCart('Sea moss', 5.99)">Add to Cart</button>
             </div>
         </div>
@@ -126,19 +60,19 @@
         <h2>Cereals</h2>
         <div class="product-list">
             <div class="product-item">White oats
-                <img src="White oats" class="Cereals">
+                <img src="Papalucas/white oats.jpg" class="Cereals">
                 <button onclick="addToCart('White oats', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Granola
-                <img src="Granola" class="Cereals">
+                <img src="Papalucas/granola.jpg" class="Cereals">
                 <button onclick="addToCart('Granola', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Chia seeds
-                <img src="Chia seeds" class="Cereals"> 
+                <img src="Papalucas/chia seeds.jpg" class="Cereals"> 
                 <button onclick="addToCart('Chia seeds', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Raisins
-                <img src="Raisins" class="Cereals">
+                <img src="Papalucas/rasins.jpg" class="Cereals">
                 <button onclick="addToCart('Raisins', 5.99)">Add to Cart</button>
             </div>
         </div>
@@ -148,39 +82,39 @@
         <h2>Oils</h2>
         <div class="product-list">
             <div class="product-item">Canola oil
-                <img src="Canola" class="Oils">
+                <img src="Papalucas/canola oil.jpg" class="Oils">
                 <button onclick="addToCart('Canola oil', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Clove bud oil
-                <img src="Clove bud oil" class="Oils">
+                <img src="Papalucas/clove bud oil.jpg" class="Oils">
                 <button onclick="addToCart('Clove bud oil', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Clove stem oil
-                <img src="Clove stem oil" class="Oils">
+                <img src="Papalucas/clove stem oil.jpg" class="Oils">
                 <button onclick="addToCart('Clove stem oil', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Castor oil
-                <img src="Castor oil" class="Oils">
+                <img src="Papalucas/castor oil.jpg" class="Oils">
                 <button onclick="addToCart('Castor oil', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Mustard oil
-                <img src="Mustard oil" class="Oils">
+                <img src="Papalucas/mustard oil.jpg" class="Oils">
                 <button onclick="addToCart('Mustard oil', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Black seed oil
-                <img src="Black seed oil" class="Oils">
+                <img src="Papalucas/black seed oil.jpg" class="Oils">
                 <button onclick="addToCart('Black seed oil', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Olive oil
-                <img src="Olive oil" class="Oils">
+                <img src="Papalucas/olive oil.jpg" class="Oils">
                 <button onclick="addToCart('Olive oil', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Coconut oil
-                <img src="Coconut oil" class="Oils">
+                <img src="Papalucas/coconut oil.jpg" class="Oils">
                 <button onclick="addToCart('Coconut oil', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Coconut cream
-                <img src="Coconut cream" class="Oils">
+                <img src="Papalucas/coconut cream.jpg" class="Oils">
                 <button onclick="addToCart('Coconut cream', 5.99)">Add to Cart</button>
             </div>
         </div>
@@ -190,31 +124,31 @@
         <h2>Spices</h2>
         <div class="product-list">
             <div class="product-item">Apple cider vinegar
-                <img src="Apple cider vinegar" class="Spices">
+                <img src="Papalucas/Apple cider vinegar.jpg" class="Spices">
                 <button onclick="addToCart('Apple cider vinegar', 5.99)">Add to Cart</button>
             </div>
             <div class="product-item">Mabuyu
-                <img src="Mabuyu" class="Spices">
+                <img src="Papalucas/mabuyu.jpg" class="Spices">
                 <button onclick="addToCart('Mabuyu', 4.99)">Add to Cart</button>
             </div>
             <div class="product-item">Almonds
-                <img src="Almonds" class="Spices">
+                <img src="Papalucas/almonds.jpg" class="Spices">
                 <button onclick="addToCart('Almonds', 6.49)">Add to Cart</button>
             </div>
             <div class="product-item">Roasted Cashew nuts
-                <img src="Roasted Cashew nuts" class="Spices">
+                <img src="Papalucas/roasted cashew nuts.jpg" class="Spices">
                 <button onclick="addToCart('Roasted Cashew nuts', 6.49)">Add to Cart</button>
             </div>
             <div class="product-item">Soya drink
-                <img src="Soya drink" class="Spices">
+                <img src="Papalucas/soya.jpg" class="Spices">
                 <button onclick="addToCart('Soya drink', 6.49)">Add to Cart</button>
             </div>
             <div class="product-item">Soy sauce
-                <img src="Soy sauce" class="Spices">
+                <img src="Papalucas/soy sauce.jpg" class="Spices">
                 <button onclick="addToCart('Soy sauce', 6.49)">Add to Cart</button>
             </div>
             <div class="product-item">Strawberry
-                <img src="Strawberry" class="Spices">
+                <img src="Papalucas/strawberries.jpg" class="Spices">
                 <button onclick="addToCart('Strawberry', 6.49)">Add to Cart</button>
             </div>
         </div>
@@ -223,52 +157,6 @@
     <footer>
         <p>&copy; 2025 Papalucas Stores. All rights reserved.</p>
     </footer>
-    <script defer src="script.js"></script>
-    <script>
-        function showCategory(category) {
-            let sections = document.querySelectorAll('.products');
-            sections.forEach(section => section.style.display = 'none');
-            document.getElementById(category).style.display = 'block';
-        }
-         // Initialize the cart
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-// Function to add a product to the cart
-function addToCart(productName, price) {
-    // Check if the product already exists in the cart
-    let product = cart.find(item => item.name === productName);
-    
-    if (product) {
-        // If the product exists, increase the quantity
-        product.quantity += 1;
-    } else {
-        // If the product doesn't exist, add a new item to the cart
-        cart.push({ name: productName, price: price, quantity: 1 });
-    }
-    
-    // Save the cart to localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
-    
-    // Optionally, update the cart display
-    updateCartDisplay();
-    
-    console.log(productName + " added to cart at $" + price);
-}
-
-// Function to update the cart display (example implementation)
-function updateCartDisplay() {
-    let cartDisplay = document.getElementById('cart-display');
-    cartDisplay.innerHTML = '';
-    
-    cart.forEach(item => {
-        let cartItem = document.createElement('div');
-        cartItem.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
-        cartDisplay.appendChild(cartItem);
-    });
-}
-
-// Example HTML for the cart display
-// <div id="cart-display"></div>
-    </script>
+    <script defer src="productsscript.js"></script>
 </body>
 </html>

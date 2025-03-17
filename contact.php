@@ -9,7 +9,7 @@ session_start();
         if (empty($name) || empty($email) || empty($message)) {
         echo "Please fill out all fields";
     } else {
-        mail("");
+        mailto:("");
     }
     }
     else {

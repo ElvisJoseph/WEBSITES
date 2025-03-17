@@ -1,0 +1,114 @@
+ body {
+            font-family: Poppins, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: green;
+            padding: 15px 20px;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+        }
+        .logo{
+    width: 50px;
+    height: auto;
+        }
+        .categories {
+            text-align: center;
+            padding: 20px;
+        }
+        .category-buttons button {
+            padding: 10px 15px;
+            margin: 5px;
+            background: orange;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .products {
+            display: none;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        product img{
+            max-width: 100%;
+            height: auto;
+        }
+        .products.show{
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .product-item {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-item img{
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background: darkgreen;
+            transform: scale(1.1);
+        }
+        .added-to-cart {
+            animation: pop 0.4s ease;
+        }
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: white;
+            margin-top: 20px;
+        }
