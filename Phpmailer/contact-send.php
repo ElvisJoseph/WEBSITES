@@ -1,5 +1,6 @@
 <!-- Purpose: This file is used to send an email to the website owner when the user submits the contact form.
 <?php
+//invoking phpmailer
    use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\Exception;
    require 'vendor/autoload.php';
@@ -9,7 +10,7 @@
          $email = $_POST['email'];
          $subject = $_POST['subject'];
          $message = $_POST['message'];
-        if (empty($name) || empty($email) || empty($message)) {
+        if (empty($name) || empty($email) || empty($message)|| empty($subject)) {
         echo "Please fill out all fields";
     } else {
         
@@ -26,11 +27,19 @@
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
         //EMAIL DETAILS
-        $mail->From=($email);
+        $mail->From=$email;
         $mail->FromName=$name;
         $mail->addAddress('amutwiri07@gmail.com');
-        $mail->Subject=($subject);
+        $mail->Subject=$subject;
         $mail->Body=$message;
+        if(!$mail->send())
+        {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+        }
+        else
+        {
+        echo "Message has been sent successfully";
+        }
 
     }
     }
