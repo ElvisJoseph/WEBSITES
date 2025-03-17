@@ -4,13 +4,13 @@ function showCategory(category) {
         section.classList.remove('show');
         setTimeout(() => {
             section.style.display = 'none';
-        }, 500);
+        }, 10000);
     });
     let activeSection = document.getElementById(category);
     activeSection.style.display = 'block';
     setTimeout(() => {
         activeSection.classList.add('show');
-    }, 50);
+    }, 50000);
 }
  // Initialize the cart
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
