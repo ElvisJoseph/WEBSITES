@@ -32,7 +32,8 @@
             <tr>
                 foreach($_SESSION['cart'] as $item){
                 <td><?php echo $item['name']; ?></td>
-                <td></td>
+                <td><?php echo $item['name']; ?></td>
+                }
             </tr>
 
     
