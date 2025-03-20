@@ -9,6 +9,25 @@
 <body>
 <?php
 session_start();
+// Set session timeout duration (in seconds)
+$timeout_duration = 300; // 5 minutes
+
+// Check if the last activity timestamp is set
+if (isset($_SESSION['LAST_ACTIVITY'])) {
+    // Calculate the time elapsed since the last activity
+    $time_elapsed = time() - $_SESSION['LAST_ACTIVITY'];
+
+    // If the time elapsed exceeds the timeout duration, destroy the session
+    if ($time_elapsed > $timeout_duration) {
+        session_unset(); // Unset session variables
+        session_destroy(); // Destroy the session
+        header("Location: login.php"); // Redirect to login page
+        exit();
+    }
+}
+
+// Update the last activity timestamp
+$_SESSION['LAST_ACTIVITY'] = time();
 if (!isset($_SESSION['Username'])) {
     header("Location: login.php");
     die();
@@ -16,8 +35,8 @@ if (!isset($_SESSION['Username'])) {
 ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2 pd-4 sidebar">
-            <div class="card">
+        <div class="col-md-2 pl-0 sidebar">
+            <div class="">
             <h4>Admin Dashboard</h4>
             <?php echo $_SESSION['Username']; ?>
                 

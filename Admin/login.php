@@ -30,17 +30,20 @@
 <section class="vh-100">
   <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100 ">
+        <!-- Logo -->
       <div class="col-md-9 col-lg-6 col-xl-5 pd-0" >
         <img src="../Papalucas/logo.svg"
           class="img-fluid" alt="Sample image">
       </div>
 
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 ">
+        <!-- identify whether user or admin -->
         <div class="choice" id="choice">
             <p>Login as a?</p>
             <button class="btn btn-primary" onclick="document.getElementById('Admin-login').style.display='block'; document.getElementById('choice').style.display='none'">Admin</button>
             <button class="btn btn-primary" onclick="document.getElementById('User-Login').style.display='block'; document.getElementById('choice').style.display='none'">User</button>
         </div>
+    <!-- User login form -->
          <form id="User-Login" class="border border-light p-5" style="display: none;" method="POST" action="#!">
           <div class="d-flex flex-row align-items-center  ">
             <p class="lead fw-normal mb-0 me-3 center">User Login</p>
@@ -81,6 +84,7 @@
           </div>
 
         </form> 
+        <!-- Admin login form -->
         <form id="Admin-login" class="border border-light p-5" style="display: none;" action="loginaction.php" method="POST">
           <div class="d-flex flex-row align-items-center  ">
             <p class="lead fw-normal mb-0 me-3">Admin Login</p>
@@ -125,27 +129,10 @@
   <div
     class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-success">
     <!-- Copyright -->
-    <div class="text-white mb-3 mb-md-0">
+    <div class="text-white mb-3 mb-md-0 align-items-center">
       Copyright © 2020. All rights reserved.
     </div>
     <!-- Copyright -->
-
-    <!-- Right -->
-    <div>
-      <a href="#!" class="text-white me-4">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="#!" class="text-white me-4">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="#!" class="text-white me-4">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="#!" class="text-white">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-    </div>
-    <!-- Right -->
   </div>
 </section>
 </body>
