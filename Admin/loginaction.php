@@ -1,4 +1,8 @@
 <?php
+$Hostname = 'localhost';
+$user = '';
+$dbName= 'papa lucas';
+$conn = new mysqli($localhost, $user, $Password, $dbName, '');
 // capture form inputs
     $Username = $_POST['Username'];
     $Password = $_POST['Password'];
